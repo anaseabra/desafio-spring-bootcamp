@@ -1,6 +1,6 @@
-package br.com.meli.bootcamp.socialmeli.model.entity;
+package br.com.meli.bootcamp.socialmeli.model.dto;
 
-public class Product {
+public class ProductDto {
 
     private int productId;
     private String name;

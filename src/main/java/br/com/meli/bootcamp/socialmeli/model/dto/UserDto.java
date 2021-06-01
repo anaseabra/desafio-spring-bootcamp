@@ -1,13 +1,13 @@
-package br.com.meli.bootcamp.socialmeli.model.entity;
+package br.com.meli.bootcamp.socialmeli.model.dto;
 
 import java.util.List;
 
-public class User {
+public class UserDto {
 
     private int userId;
     private String username;
-    List<Seller> followed;
-    List<Post> followedPosts;
+    List<SellerDto> followed;
+    List<PostDto> followedPostDtos;
 
     public int getUserId() {
         return userId;
@@ -25,19 +25,19 @@ public class User {
         this.username = username;
     }
 
-    public List<Seller> getFollowed() {
+    public List<SellerDto> getFollowed() {
         return followed;
     }
 
-    public void setFollowed(List<Seller> followed) {
+    public void setFollowed(List<SellerDto> followed) {
         this.followed = followed;
     }
 
-    public List<Post> getFollowedPosts() {
-        return followedPosts;
+    public List<PostDto> getFollowedPosts() {
+        return followedPostDtos;
     }
 
-    public void setFollowedPosts(List<Post> followedPosts) {
-        this.followedPosts = followedPosts;
+    public void setFollowedPosts(List<PostDto> followedPostDtos) {
+        this.followedPostDtos = followedPostDtos;
     }
 }

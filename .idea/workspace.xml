@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b73721e-79b6-40ec-b9fd-579c9cb613a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/PostDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/SellerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/SellerRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sellers.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/main/java/br/com/meli/bootcamp/socialmeli/SocialMeliApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/main/java/br/com/meli/bootcamp/socialmeli/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/Post.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/Seller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialmeli/src/test/java/br/com/meli/bootcamp/socialmeli/SocialMeliApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/SellerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/UserDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,6 +44,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.meli.bootcamp.socialmeli.model.repository" />
+      <recent name="br.com.meli.bootcamp.socialmeli.model.dto" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -70,5 +72,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

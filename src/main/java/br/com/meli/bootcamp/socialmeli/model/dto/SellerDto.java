@@ -1,13 +1,12 @@
-package br.com.meli.bootcamp.socialmeli.model.entity;
+package br.com.meli.bootcamp.socialmeli.model.dto;
 
 import java.util.List;
 
-public class Seller {
+public class SellerDto {
 
     private int sellerId;
     private String username;
-    private String location;
-    private List<User> followers;
+    private List<UserDto> followers;
 
 
     public int getSellerId() {
@@ -26,19 +25,11 @@ public class Seller {
         this.username = username;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public List<User> getFollowers() {
+    public List<UserDto> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(List<User> followers) {
+    public void setFollowers(List<UserDto> followers) {
         this.followers = followers;
     }
 }

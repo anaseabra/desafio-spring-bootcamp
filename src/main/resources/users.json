@@ -1,0 +1,44 @@
+[
+  {
+    "userId": 1,
+    "userName": "Ana Seabra",
+    "followed": [],
+    "followedPosts": []
+  },
+  {
+    "userId": 2,
+    "userName": "Augusto Brum",
+    "followed": [],
+    "followedPosts": []
+  },
+  {
+    "userId": 3,
+    "userName": "Douglas Mateus",
+    "followed": [],
+    "followedPosts": []
+  },
+  {
+    "userId": 4,
+    "userName": "Wilson Torres",
+    "followed": [],
+    "followedPosts": []
+  },
+  {
+    "userId": 5,
+    "userName": "Lara Junqueira",
+    "followed": [],
+    "followedPosts": []
+  },
+  {
+    "userId": 6,
+    "userName": "Ana Altiva",
+    "followed": [],
+    "followedPosts": []
+  },
+  {
+    "userId": 7,
+    "userName": "Lidia Nicole",
+    "followed": [],
+    "followedPosts": []
+  }
+]
