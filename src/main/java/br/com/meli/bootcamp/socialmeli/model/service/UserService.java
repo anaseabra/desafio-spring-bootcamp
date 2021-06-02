@@ -1,9 +1,12 @@
 package br.com.meli.bootcamp.socialmeli.model.service;
 
-import org.springframework.stereotype.Service;
+import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
 
-@Service
+import java.io.IOException;
+
+
 public interface UserService {
 
-    void followSeller(int userId, int sellerId);
+    GlobalUserDto findById(int userId) throws IOException;
+    GlobalUserDto followSeller(int userId, int sellerId) throws IOException;
 }

@@ -1,0 +1,52 @@
+User
+    Atributos:
+        userId: int
+        List<Seller>
+        List<Post>
+    
+    
+    Metodos:
+        ->Seguir um vendedor
+        ->deixar de seguir
+        ->acompanhar um post
+
+Seller
+    Atributos:
+        ->sellerId: int
+        ->List<User>
+        ->List<Post>
+    
+    
+    Metodos:
+        ->registrar post
+        ->quem me segue
+        ->quantas pessoas me seguem
+
+
+
+Post
+    Atributos:
+        postId
+        date
+        body
+        
+        
+    
+    Metodos:
+
+
+Product
+    Atributos:
+        productId
+        name
+        type
+        brand
+        color
+        notes
+        category
+        price
+        
+    
+    Metodos:
+
+

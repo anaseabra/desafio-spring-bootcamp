@@ -1,7 +1,10 @@
 [
   {
-    "sellerId": 1,
+    "userId": 1,
     "userName": "Auto Peças Pebolim",
+    "followed": [],
+    "followedPosts": [],
+    "myPosts": [],
     "followers": []
   },
   {
@@ -18,6 +21,7 @@
     "sellerId": 4,
     "userName": "Witcher Manutenção de Computadores",
     "followers": []
-  }
+  },
+
 
 ]
