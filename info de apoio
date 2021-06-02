@@ -48,5 +48,20 @@ Product
         
     
     Metodos:
+    
+    
+GlobalUser
+    userId
+    username
+    List<Usuario> followed
+    List<Post> followedPosts
+    
+Seller
+    List<Post> myPosts
+    List<GlobalUser> followers
+    
 
+
+usuario pode seguir mas nao pode ser seguido
+vendedor pode seguir(outro vendedor) e ser seguido
 

@@ -1,17 +1,19 @@
 package br.com.meli.bootcamp.socialmeli.model.dto;
 
+import org.apache.catalina.User;
+
 import java.util.List;
 import java.util.Objects;
 
 public class GlobalUserDto {
     private int userId;
-    private int userName;
-    private List<GlobalUserDto> followed;
-    List<PostDto> followedPostDtos;
-    private boolean isSeller;
-    private List<PostDto> myPostDtos;
+    private String userName;
+    private List<UserDetail> followed;
+    private List<PostDto> followedPosts;
+    private boolean seller;
+    private List<PostDto> myPosts;
+    private List<UserDetail> followers;
 
-    private List<GlobalUserDto> followers;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,36 +31,56 @@ public class GlobalUserDto {
         return userId;
     }
 
-    public int getUserName() {
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(int userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public List<GlobalUserDto> getFollowed() {
+    public List<UserDetail> getFollowed() {
         return followed;
     }
 
+    public void setFollowed(List<UserDetail> followed) {
+        this.followed = followed;
+    }
+
     public List<PostDto> getFollowedPosts() {
-        return followedPostDtos;
+        return followedPosts;
+    }
+
+    public void setFollowedPosts(List<PostDto> followedPosts) {
+        this.followedPosts = followedPosts;
     }
 
     public boolean isSeller() {
-        return isSeller;
+        return seller;
     }
 
     public void setSeller(boolean seller) {
-        isSeller = seller;
+        this.seller = seller;
     }
 
     public List<PostDto> getMyPosts() {
-        return myPostDtos;
+        return myPosts;
     }
 
-    public List<GlobalUserDto> getFollowers() {
+    public void setMyPosts(List<PostDto> myPosts) {
+        this.myPosts = myPosts;
+    }
+
+    public List<UserDetail> getFollowers() {
         return followers;
     }
-    
+
+    public void setFollowers(List<UserDetail> followers) {
+        this.followers = followers;
+    }
+
 }
