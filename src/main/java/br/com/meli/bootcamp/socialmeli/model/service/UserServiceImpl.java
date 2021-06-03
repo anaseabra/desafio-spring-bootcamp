@@ -1,11 +1,16 @@
 package br.com.meli.bootcamp.socialmeli.model.service;
 
 
+import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
+import br.com.meli.bootcamp.socialmeli.exception.UserNotFoundException;
+import br.com.meli.bootcamp.socialmeli.model.dto.FollowersCountDto;
+import br.com.meli.bootcamp.socialmeli.model.dto.FollowersDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.UserDetail;
 import br.com.meli.bootcamp.socialmeli.model.repository.GlobalUserRepository;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -18,8 +23,19 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public GlobalUserDto findById(int userId) throws Exception {
+    public GlobalUserDto getGlobalUserById(int userId) throws Exception {
         return globalUserRepository.findGlobalUserById(userId);
+    }
+
+    @Override
+    public GlobalUserDto getSellerUserById(int sellerId) throws UserNotFoundException, UserIsNotSellerException, IOException {
+        GlobalUserDto sellerUser =  globalUserRepository.findGlobalUserById(sellerId);
+        if(sellerUser != null && !sellerUser.isSeller()){
+            throw new UserIsNotSellerException("User is not a seller");
+        }
+
+        return sellerUser;
+
     }
 
     @Override
@@ -30,9 +46,27 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<UserDetail> getSellerFollowers(int sellerId) throws Exception {
-        List<UserDetail> followers = globalUserRepository.findFollowers(sellerId);
-        return followers;
+    public FollowersDto getFollowers(int userId) throws Exception {
+        GlobalUserDto seller = getSellerUserById(userId);
+
+        FollowersDto followersDto = new FollowersDto();
+        followersDto.setUserId(seller.getUserId());
+        followersDto.setUserName(seller.getUserName());
+        followersDto.setFollowers(seller.getFollowers());
+
+        return followersDto;
+    }
+
+    @Override
+    public FollowersCountDto getTotalFollowers(int userId) throws Exception {
+        FollowersCountDto followersCountDto= new FollowersCountDto();
+        GlobalUserDto sellerUser = getSellerUserById(userId);
+
+        followersCountDto.setUserId(sellerUser.getUserId());
+        followersCountDto.setUserName(sellerUser.getUserName());
+        followersCountDto.setFollowersCount(sellerUser.getFollowers().size());
+
+        return followersCountDto;
     }
 
 }

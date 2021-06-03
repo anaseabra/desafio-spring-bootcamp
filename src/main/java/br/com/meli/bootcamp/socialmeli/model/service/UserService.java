@@ -1,15 +1,18 @@
 package br.com.meli.bootcamp.socialmeli.model.service;
 
+import br.com.meli.bootcamp.socialmeli.model.dto.FollowersCountDto;
+import br.com.meli.bootcamp.socialmeli.model.dto.FollowersDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
-import br.com.meli.bootcamp.socialmeli.model.dto.UserDetail;
 
 import java.util.List;
 
 
 public interface UserService {
 
-    GlobalUserDto findById(int userId) throws Exception;
+    GlobalUserDto getGlobalUserById(int userId) throws Exception;
+    GlobalUserDto getSellerUserById(int sellerId) throws Exception;
     GlobalUserDto followSeller(int userId, int sellerId) throws Exception;
-    List<UserDetail> getSellerFollowers (int sellerId) throws Exception;
+    FollowersDto getFollowers(int userId) throws Exception;
+    FollowersCountDto getTotalFollowers (int userId) throws Exception;
 
 }

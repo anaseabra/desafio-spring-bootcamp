@@ -1,6 +1,7 @@
 package br.com.meli.bootcamp.socialmeli.controller;
 
 import br.com.meli.bootcamp.socialmeli.model.dto.FollowersCountDto;
+import br.com.meli.bootcamp.socialmeli.model.dto.FollowersDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.UserDetail;
 import br.com.meli.bootcamp.socialmeli.model.service.UserService;
@@ -22,7 +23,7 @@ public class UserController {
 
     @GetMapping("/")
     public ResponseEntity<GlobalUserDto> getUserById(@PathVariable int userId) throws Exception {
-        return ResponseEntity.status(200).body(this.userService.findById(userId));
+        return ResponseEntity.status(200).body(this.userService.getGlobalUserById(userId));
     }
 
     @PostMapping("/follow/{userIdToFollow}")
@@ -31,17 +32,13 @@ public class UserController {
     }
 
     @GetMapping("/followers/count")
-    public ResponseEntity<FollowersCountDto> getFollowersCount(@PathVariable int userId) throws Exception {
-        GlobalUserDto seller = userService.findById(userId);
-        if(!seller.isSeller()){
-            throw new Exception("User is not a seller");
-        }
+    public ResponseEntity<FollowersCountDto> getTotalFollowers(@PathVariable int userId) throws Exception {
 
-        FollowersCountDto followersCountDto = new FollowersCountDto();
-        followersCountDto.setUserId(seller.getUserId());
-        followersCountDto.setUserName(seller.getUserName());
-        followersCountDto.setFollowersCount(seller.getFollowers().size());
+        return ResponseEntity.status(200).body(userService.getTotalFollowers(userId));
+    }
 
-        return ResponseEntity.status(200).body(followersCountDto);
+    @GetMapping("/followers/list")
+    public ResponseEntity<FollowersDto> getFollowers(@PathVariable int userId) throws Exception {
+        return ResponseEntity.status(200).body(userService.getFollowers(userId));
     }
 }

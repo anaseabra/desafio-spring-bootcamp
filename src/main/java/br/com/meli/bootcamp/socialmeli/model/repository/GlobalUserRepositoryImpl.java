@@ -1,6 +1,7 @@
 package br.com.meli.bootcamp.socialmeli.model.repository;
 
 import br.com.meli.bootcamp.socialmeli.Utils.SocialMeliUtils;
+import br.com.meli.bootcamp.socialmeli.exception.UserNotFoundException;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.UserDetail;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -19,7 +20,7 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
     private ObjectMapper mapper = new ObjectMapper();
 
     @Override
-    public GlobalUserDto findGlobalUserById(int userId) throws Exception {
+    public GlobalUserDto findGlobalUserById(int userId) throws UserNotFoundException, IOException {
         List<GlobalUserDto> users = loadDataBase();
         GlobalUserDto result = null;
         if (users != null) {
@@ -27,7 +28,7 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
                     .filter(userDto -> userDto.getUserId() == userId)
                     .findFirst();
             if (!item.isPresent()) {
-                throw new Exception("User not found!");
+                throw new UserNotFoundException("User not found!");
             }
             result = item.get();
         }
@@ -50,13 +51,6 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
         }
 
         return result;
-    }
-
-    @Override
-    public List<UserDetail> findFollowers(int userId) throws IOException, Exception {
-        GlobalUserDto sellerUser = this.findSellerUserById(userId);
-        List<UserDetail> followers = sellerUser.getFollowers();
-        return followers;
     }
 
     @Override

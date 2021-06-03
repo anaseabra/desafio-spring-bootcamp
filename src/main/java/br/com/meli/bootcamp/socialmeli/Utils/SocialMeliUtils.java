@@ -9,7 +9,7 @@ public abstract class SocialMeliUtils {
         UserDetail userDetail = new UserDetail();
         userDetail.setUserId(globalUserDto.getUserId());
         userDetail.setUserName(globalUserDto.getUserName());
-        userDetail.setSeller(globalUserDto.isSeller());
+//        userDetail.(globalUserDto.isSeller());
         return userDetail;
     }
 }

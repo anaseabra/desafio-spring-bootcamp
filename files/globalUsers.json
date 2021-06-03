@@ -1,1 +1,134 @@
-[{"userId":1,"userName":"Hermione Granger","followed":[{"userId":9,"userName":"Auto Eletrica Paintball","seller":true}],"followedPosts":[],"seller":false,"myPosts":[],"followers":[]},{"userId":2,"userName":"Harry Potter","followed":[],"followedPosts":[],"seller":false,"myPosts":[],"followers":[]},{"userId":3,"userName":"Draco Malfoy","followed":[],"followedPosts":[],"seller":false,"myPosts":[],"followers":[]},{"userId":4,"userName":"Ron Wesley","followed":[],"followedPosts":[],"seller":false,"myPosts":[],"followers":[]},{"userId":5,"userName":"Severus Snape","followed":[],"followedPosts":[],"seller":false,"myPosts":[],"followers":[]},{"userId":6,"userName":"Albus Dumbledore","followed":[],"followedPosts":[],"seller":false,"myPosts":[],"followers":[]},{"userId":7,"userName":"Rubeo Hagrid","followed":[],"followedPosts":[],"seller":false,"myPosts":[],"followers":[]},{"userId":8,"userName":"Auto Peças Pebolim","followed":[{"userId":9,"userName":"Auto Eletrica Paintball","seller":true}],"followedPosts":[],"seller":true,"myPosts":[],"followers":[]},{"userId":9,"userName":"Auto Eletrica Paintball","followed":[{"userId":11,"userName":"Witcher Manutenção de Computadores","seller":true}],"followedPosts":[],"seller":true,"myPosts":[],"followers":[{"userId":8,"userName":"Auto Peças Pebolim","seller":true},{"userId":1,"userName":"Hermione Granger","seller":false}]},{"userId":10,"userName":"Warcraft Informatica","followed":[],"followedPosts":[],"seller":true,"myPosts":[],"followers":[]},{"userId":11,"userName":"Witcher Manutenção de Computadores","followed":[],"followedPosts":[],"seller":true,"myPosts":[],"followers":[{"userId":9,"userName":"Auto Eletrica Paintball","seller":true}]}]
+[
+  {
+    "userId": 1,
+    "userName": "Hermione Granger",
+    "followed": [
+      {
+        "userId": 9,
+        "userName": "Auto Eletrica Paintball"
+      }
+    ],
+    "followedPosts": [],
+    "seller": false,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 2,
+    "userName": "Harry Potter",
+    "followed": [],
+    "followedPosts": [],
+    "seller": false,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 3,
+    "userName": "Draco Malfoy",
+    "followed": [],
+    "followedPosts": [],
+    "seller": false,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 4,
+    "userName": "Ron Wesley",
+    "followed": [],
+    "followedPosts": [],
+    "seller": false,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 5,
+    "userName": "Severus Snape",
+    "followed": [],
+    "followedPosts": [],
+    "seller": false,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 6,
+    "userName": "Albus Dumbledore",
+    "followed": [],
+    "followedPosts": [],
+    "seller": false,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 7,
+    "userName": "Rubeo Hagrid",
+    "followed": [],
+    "followedPosts": [],
+    "seller": false,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 8,
+    "userName": "Auto Peças Pebolim",
+    "followed": [
+      {
+        "userId": 9,
+        "userName": "Auto Eletrica Paintball"
+      }
+    ],
+    "followedPosts": [],
+    "seller": true,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 9,
+    "userName": "Auto Eletrica Paintball",
+    "followed": [
+      {
+        "userId": 11,
+        "userName": "Witcher Manutenção de Computadores"
+      }
+    ],
+    "followedPosts": [],
+    "seller": true,
+    "myPosts": [],
+    "followers": [
+      {
+        "userId": 8,
+        "userName": "Auto Peças Pebolim"
+      },
+      {
+        "userId": 1,
+        "userName": "Hermione Granger"
+      },
+      {
+        "userId": 1,
+        "userName": "Hermione Granger"
+      }
+    ]
+  },
+  {
+    "userId": 10,
+    "userName": "Warcraft Informatica",
+    "followed": [],
+    "followedPosts": [],
+    "seller": true,
+    "myPosts": [],
+    "followers": []
+  },
+  {
+    "userId": 11,
+    "userName": "Witcher Manutenção de Computadores",
+    "followed": [],
+    "followedPosts": [],
+    "seller": true,
+    "myPosts": [],
+    "followers": [
+      {
+        "userId": 9,
+        "userName": "Auto Eletrica Paintball"
+      }
+    ]
+  }
+]

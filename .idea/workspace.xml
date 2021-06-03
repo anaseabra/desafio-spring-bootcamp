@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7b73721e-79b6-40ec-b9fd-579c9cb613a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/globalUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/globalUsers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/sellers.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/info de apoio" beforeDir="false" afterPath="$PROJECT_DIR$/info de apoio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/GlobalUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/GlobalUserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/UserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/UserDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserService.java" afterDir="false" />
@@ -56,6 +53,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.meli.bootcamp.socialmeli.exception" />
       <recent name="br.com.meli.bootcamp.socialmeli.dto" />
       <recent name="br.com.meli.bootcamp.socialmeli.model.repository" />
       <recent name="br.com.meli.bootcamp.socialmeli.model.dto" />
