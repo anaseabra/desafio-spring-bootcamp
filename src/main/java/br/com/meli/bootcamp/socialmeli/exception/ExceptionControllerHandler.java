@@ -13,10 +13,10 @@ import java.util.Date;
 public class ExceptionControllerHandler extends ResponseEntityExceptionHandler {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(NotFoundException.class)
     @ResponseBody
     ErrorInfo
-    handleAnyExcpetion(Exception e){
+    handleNotFoundExcpetion(NotFoundException e){
         return new ErrorInfo(new Date(), e.getMessage());
     }
 }

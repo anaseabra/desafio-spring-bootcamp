@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b73721e-79b6-40ec-b9fd-579c9cb613a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/files/products.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/FollowedPostsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/PostRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/PostRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/ProductRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/PostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/PostServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/globalUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/globalUsers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/posts.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/posts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/Utils/ProductCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/Utils/ProductCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/exception/AlredyFollowException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/exception/AlreadyFollowException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/exception/ExceptionControllerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/exception/ExceptionControllerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/exception/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/GlobalUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/GlobalUserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/PostDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/ProductDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/UserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/UserDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/GlobalUserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/GlobalUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/GlobalUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +38,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,8 +71,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="br.com.meli.bootcamp.socialmeli.exception" />
+      <recent name="br.com.meli.bootcamp.socialmeli.model.service" />
       <recent name="br.com.meli.bootcamp.socialmeli.dto" />
+      <recent name="br.com.meli.bootcamp.socialmeli.exception" />
       <recent name="br.com.meli.bootcamp.socialmeli.model.repository" />
       <recent name="br.com.meli.bootcamp.socialmeli.model.dto" />
     </key>

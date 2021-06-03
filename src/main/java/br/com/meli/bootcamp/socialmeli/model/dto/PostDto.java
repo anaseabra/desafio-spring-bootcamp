@@ -1,21 +1,29 @@
 package br.com.meli.bootcamp.socialmeli.model.dto;
 
 import br.com.meli.bootcamp.socialmeli.Utils.ProductCategory;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class PostDto {
 
-    private static int postId = 0;
+    private int postId;
     private int userId;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date date;
+
     private ProductDto detail;
     private ProductCategory category;
     private double price;
 
-    public PostDto(int postId) {
-        postId++;
-        this.date = new Date();
+    public int getPostId() {
+        return postId;
+    }
+
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
 
     public int getUserId() {
@@ -28,6 +36,10 @@ public class PostDto {
 
     public Date getDate() {
         return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public ProductDto getDetail() {
@@ -52,5 +64,18 @@ public class PostDto {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PostDto postDto = (PostDto) o;
+        return postId == postDto.postId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(postId);
     }
 }

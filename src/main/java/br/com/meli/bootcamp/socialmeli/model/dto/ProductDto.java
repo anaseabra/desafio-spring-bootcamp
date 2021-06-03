@@ -2,7 +2,8 @@ package br.com.meli.bootcamp.socialmeli.model.dto;
 
 public class ProductDto {
 
-    private static int productId = 0;
+    private static int sequence = 0;
+    private int productId;
     private String productName;
     private String type;
     private String brand;
@@ -10,7 +11,7 @@ public class ProductDto {
     private String notes;
 
     public ProductDto() {
-        this.productId++;
+        this.productId = sequence++;
     }
 
     public int getProductId() {

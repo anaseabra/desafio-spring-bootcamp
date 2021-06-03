@@ -7,9 +7,8 @@ public class GlobalUserDto {
     private int userId;
     private String userName;
     private List<UserDetail> followed;
-    private List<PostDto> followedPosts;
     private boolean seller;
-    private List<PostDto> myPosts;
+    private List<Integer> myPosts;
     private List<UserDetail> followers;
 
     @Override
@@ -49,14 +48,6 @@ public class GlobalUserDto {
         this.followed = followed;
     }
 
-    public List<PostDto> getFollowedPosts() {
-        return followedPosts;
-    }
-
-    public void setFollowedPosts(List<PostDto> followedPosts) {
-        this.followedPosts = followedPosts;
-    }
-
     public boolean isSeller() {
         return seller;
     }
@@ -65,11 +56,11 @@ public class GlobalUserDto {
         this.seller = seller;
     }
 
-    public List<PostDto> getMyPosts() {
+    public List<Integer> getMyPosts() {
         return myPosts;
     }
 
-    public void setMyPosts(List<PostDto> myPosts) {
+    public void setMyPosts(List<Integer> myPosts) {
         this.myPosts = myPosts;
     }
 
