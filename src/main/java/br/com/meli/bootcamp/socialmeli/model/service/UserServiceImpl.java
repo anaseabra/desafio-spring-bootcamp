@@ -6,12 +6,10 @@ import br.com.meli.bootcamp.socialmeli.exception.UserNotFoundException;
 import br.com.meli.bootcamp.socialmeli.model.dto.FollowersCountDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.FollowersDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
-import br.com.meli.bootcamp.socialmeli.model.dto.UserDetail;
 import br.com.meli.bootcamp.socialmeli.model.repository.GlobalUserRepository;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -46,7 +44,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public FollowersDto getFollowers(int userId) throws Exception {
+    public FollowersDto getFollowers(int userId) throws UserNotFoundException, IOException, UserIsNotSellerException {
         GlobalUserDto seller = getSellerUserById(userId);
 
         FollowersDto followersDto = new FollowersDto();
@@ -58,7 +56,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public FollowersCountDto getTotalFollowers(int userId) throws Exception {
+    public FollowersCountDto getTotalFollowers(int userId) throws UserNotFoundException, IOException, UserIsNotSellerException {
         FollowersCountDto followersCountDto= new FollowersCountDto();
         GlobalUserDto sellerUser = getSellerUserById(userId);
 

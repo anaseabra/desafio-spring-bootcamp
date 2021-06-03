@@ -1,7 +1,5 @@
 package br.com.meli.bootcamp.socialmeli.model.dto;
 
-import org.apache.catalina.User;
-
 import java.util.List;
 import java.util.Objects;
 
