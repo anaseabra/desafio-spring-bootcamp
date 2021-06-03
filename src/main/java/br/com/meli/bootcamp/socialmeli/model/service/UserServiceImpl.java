@@ -3,6 +3,7 @@ package br.com.meli.bootcamp.socialmeli.model.service;
 
 import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
 import br.com.meli.bootcamp.socialmeli.exception.UserNotFoundException;
+import br.com.meli.bootcamp.socialmeli.model.dto.FollowedDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.FollowersCountDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.FollowersDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
@@ -38,7 +39,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public GlobalUserDto followSeller(int userId, int sellerId) throws Exception {
-        GlobalUserDto seller = globalUserRepository.findSellerUserById(sellerId);
+        GlobalUserDto seller = getSellerUserById(sellerId);
         GlobalUserDto result = globalUserRepository.followSellerUser(userId, seller);
         return result;
     }
@@ -67,4 +68,22 @@ public class UserServiceImpl implements UserService{
         return followersCountDto;
     }
 
+    @Override
+    public FollowedDto getFollowedList(int userId) throws UserNotFoundException, IOException {
+        GlobalUserDto user = globalUserRepository.findGlobalUserById(userId);
+
+        FollowedDto followedDto = new FollowedDto();
+        followedDto.setUserId(user.getUserId());
+        followedDto.setUserName(user.getUserName());
+        followedDto.setFollowedList(user.getFollowed());
+
+        return followedDto;
+    }
+
+    @Override
+    public GlobalUserDto unfollowSeller(int userId, int sellerId) throws Exception {
+        GlobalUserDto seller = getSellerUserById(sellerId);
+        GlobalUserDto result = globalUserRepository.unfollowSellerUser(userId, seller);
+        return result;
+    }
 }

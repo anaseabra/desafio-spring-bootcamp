@@ -1,6 +1,8 @@
 package br.com.meli.bootcamp.socialmeli.model.repository;
 
 import br.com.meli.bootcamp.socialmeli.Utils.SocialMeliUtils;
+import br.com.meli.bootcamp.socialmeli.exception.AlredyFollowException;
+import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
 import br.com.meli.bootcamp.socialmeli.exception.UserNotFoundException;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
 import br.com.meli.bootcamp.socialmeli.model.dto.UserDetail;
@@ -37,23 +39,6 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
     }
 
     @Override
-    public GlobalUserDto findSellerUserById(int userId) throws IOException, Exception {
-        List<GlobalUserDto> users = loadDataBase();
-        GlobalUserDto result = null;
-        if (users != null) {
-            Optional<GlobalUserDto> item = users.stream()
-                    .filter(sellerUser -> sellerUser.getUserId() == userId && sellerUser.isSeller())
-                    .findFirst();
-            if (!item.isPresent()) {
-                throw new Exception("Seller not found!");
-            }
-            result = item.get();
-        }
-
-        return result;
-    }
-
-    @Override
     public GlobalUserDto followSellerUser(int userId, GlobalUserDto sellerUser) throws Exception {
         File file = ResourceUtils.getFile("files/globalUsers.json");
         List<GlobalUserDto> userDtoList = loadDataBase();
@@ -62,10 +47,43 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
 
         int indexGlobalUser = userDtoList.indexOf(user);
         int indexSellerUser= userDtoList.indexOf(sellerUser);
-        if (!user.getFollowed().contains(sellerUser)) {
-            user.getFollowed().add(SocialMeliUtils.getUserDetails(sellerUser));
-            sellerUser.getFollowers().add(SocialMeliUtils.getUserDetails(user));
+
+        if(!sellerUser.isSeller()){
+            throw new UserIsNotSellerException("You can only follow seller user");
         }
+        if (user.getFollowed().contains(SocialMeliUtils.getUserDetails(sellerUser))) {
+            throw new AlredyFollowException("You already follow this seller");
+        }
+
+        user.getFollowed().add(SocialMeliUtils.getUserDetails(sellerUser));
+        sellerUser.getFollowers().add(SocialMeliUtils.getUserDetails(user));
+
+        userDtoList.set(indexGlobalUser, user);
+        userDtoList.set(indexSellerUser, sellerUser);
+        mapper.writeValue(file, userDtoList);
+        return user;
+    }
+
+    @Override
+    public GlobalUserDto unfollowSellerUser(int userId, GlobalUserDto sellerUser) throws Exception {
+        File file = ResourceUtils.getFile("files/globalUsers.json");
+        List<GlobalUserDto> userDtoList = loadDataBase();
+
+        GlobalUserDto user = this.findGlobalUserById(userId);
+
+        int indexGlobalUser = userDtoList.indexOf(user);
+        int indexSellerUser= userDtoList.indexOf(sellerUser);
+
+        if(!sellerUser.isSeller()){
+            throw new UserIsNotSellerException("You can only unfollow seller user");
+        }
+        if (!user.getFollowed().contains(SocialMeliUtils.getUserDetails(sellerUser))) {
+            throw new AlredyFollowException("You don't follow this seller");
+        }
+
+        user.getFollowed().remove(SocialMeliUtils.getUserDetails(sellerUser));
+        sellerUser.getFollowers().remove(SocialMeliUtils.getUserDetails(user));
+
         userDtoList.set(indexGlobalUser, user);
         userDtoList.set(indexSellerUser, sellerUser);
         mapper.writeValue(file, userDtoList);

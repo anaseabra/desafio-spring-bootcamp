@@ -2,29 +2,27 @@ package br.com.meli.bootcamp.socialmeli.model.dto;
 
 public class ProductDto {
 
-    private int productId;
-    private String name;
+    private static int productId = 0;
+    private String productName;
     private String type;
     private String brand;
     private String color;
     private String notes;
-    private int category;
-    private double price;
+
+    public ProductDto() {
+        this.productId++;
+    }
 
     public int getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public String getProductName() {
+        return productName;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public String getType() {
@@ -57,22 +55,6 @@ public class ProductDto {
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public int getCategory() {
-        return category;
-    }
-
-    public void setCategory(int category) {
-        this.category = category;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 }
 

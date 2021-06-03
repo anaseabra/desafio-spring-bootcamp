@@ -1,34 +1,56 @@
 package br.com.meli.bootcamp.socialmeli.model.dto;
 
+import br.com.meli.bootcamp.socialmeli.Utils.ProductCategory;
+
 import java.util.Date;
 
 public class PostDto {
 
-    private int postId;
+    private static int postId = 0;
+    private int userId;
     private Date date;
-    private String body;
+    private ProductDto detail;
+    private ProductCategory category;
+    private double price;
 
-    public int getPostId() {
-        return postId;
+    public PostDto(int postId) {
+        postId++;
+        this.date = new Date();
     }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public ProductDto getDetail() {
+        return detail;
     }
 
-    public String getBody() {
-        return body;
+    public void setDetail(ProductDto detail) {
+        this.detail = detail;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public ProductCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ProductCategory category) {
+        this.category = category;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
