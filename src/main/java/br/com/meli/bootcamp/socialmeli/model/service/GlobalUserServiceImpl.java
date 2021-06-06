@@ -5,9 +5,13 @@ import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
 import br.com.meli.bootcamp.socialmeli.exception.NotFoundException;
 import br.com.meli.bootcamp.socialmeli.model.dto.*;
 import br.com.meli.bootcamp.socialmeli.model.repository.GlobalUserRepository;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.Comparator;
+import java.util.List;
+import java.util.concurrent.locks.Condition;
 
 @Service
 public class GlobalUserServiceImpl implements GlobalUserService {
@@ -25,8 +29,8 @@ public class GlobalUserServiceImpl implements GlobalUserService {
 
     @Override
     public GlobalUserDto getSellerUserById(int sellerId) throws NotFoundException, UserIsNotSellerException, IOException {
-        GlobalUserDto sellerUser =  globalUserRepository.findGlobalUserById(sellerId);
-        if(sellerUser != null && !sellerUser.isSeller()){
+        GlobalUserDto sellerUser = globalUserRepository.findGlobalUserById(sellerId);
+        if (sellerUser != null && !sellerUser.isSeller()) {
             throw new UserIsNotSellerException("User is not a seller");
         }
 
@@ -38,7 +42,7 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     public GlobalUserDto followSeller(int userId, int sellerId) throws Exception {
         GlobalUserDto sellerUser = getSellerUserById(sellerId);
 
-        if(!sellerUser.isSeller()){
+        if (!sellerUser.isSeller()) {
             throw new UserIsNotSellerException("You can only follow seller user");
         }
 
@@ -47,20 +51,20 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     }
 
     @Override
-    public FollowersDto getFollowers(int userId) throws NotFoundException, IOException, UserIsNotSellerException {
+    public FollowersDto getFollowersList(int userId, String orderBy) throws NotFoundException, IOException, UserIsNotSellerException {
         GlobalUserDto seller = getSellerUserById(userId);
 
         FollowersDto followersDto = new FollowersDto();
         followersDto.setUserId(seller.getUserId());
         followersDto.setUserName(seller.getUserName());
-        followersDto.setFollowers(seller.getFollowers());
+        followersDto.setFollowers(this.orderBy(seller.getFollowers(), orderBy));
 
         return followersDto;
     }
 
     @Override
     public FollowersCountDto getTotalFollowers(int userId) throws NotFoundException, IOException, UserIsNotSellerException {
-        FollowersCountDto followersCountDto= new FollowersCountDto();
+        FollowersCountDto followersCountDto = new FollowersCountDto();
         GlobalUserDto sellerUser = getSellerUserById(userId);
 
         followersCountDto.setUserId(sellerUser.getUserId());
@@ -71,13 +75,14 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     }
 
     @Override
-    public FollowedDto getFollowedList(int userId) throws NotFoundException, IOException {
+    public FollowedDto getFollowedList(int userId, String orderBy) throws NotFoundException, IOException {
         GlobalUserDto user = globalUserRepository.findGlobalUserById(userId);
 
         FollowedDto followedDto = new FollowedDto();
         followedDto.setUserId(user.getUserId());
         followedDto.setUserName(user.getUserName());
-        followedDto.setFollowedList(user.getFollowed());
+
+        followedDto.setFollowedList(this.orderBy(user.getFollowed(), orderBy));
 
         return followedDto;
     }
@@ -86,7 +91,7 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     public GlobalUserDto unfollowSeller(int userId, int sellerId) throws Exception {
         GlobalUserDto sellerUser = getSellerUserById(sellerId);
 
-        if(!sellerUser.isSeller()){
+        if (!sellerUser.isSeller()) {
             throw new UserIsNotSellerException("You can only follow seller user");
         }
         GlobalUserDto result = globalUserRepository.unfollowSellerUser(userId, sellerUser);
@@ -97,4 +102,16 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     public void addPostIdToSellerUser(PostDto postDto) throws NotFoundException, IOException, UserIsNotSellerException {
         globalUserRepository.addPostIdToSellerUser(postDto.getPostId(), getSellerUserById(postDto.getUserId()));
     }
+
+    public List<UserDetail> orderBy(List<UserDetail> users, String condition) {
+
+        if (condition != null && condition.equals("name_asc")) {
+            users.sort(Comparator.comparing(UserDetail::getUserName));
+        } else if (condition != null && condition.equals("name_desc")) {
+            users.sort(Comparator.comparing(UserDetail::getUserName).reversed());
+        }
+
+        return users;
+    }
+
 }

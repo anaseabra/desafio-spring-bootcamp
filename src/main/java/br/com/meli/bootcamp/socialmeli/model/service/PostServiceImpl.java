@@ -33,7 +33,7 @@ public class PostServiceImpl implements PostService{
         FollowedPostsDto followedPostsDto = new FollowedPostsDto();
         GlobalUserDto user = globalUserService.getGlobalUserById(userId);
 
-        FollowedDto followers = globalUserService.getFollowedList(userId);
+        FollowedDto followers = globalUserService.getFollowedList(userId, "");
 
         List<PostDto> posts = new ArrayList<>();
 

@@ -13,8 +13,8 @@ public interface GlobalUserService {
     GlobalUserDto getSellerUserById(int sellerId) throws Exception;
     GlobalUserDto followSeller(int userId, int sellerId) throws Exception;
     FollowersCountDto getTotalFollowers (int userId) throws NotFoundException, IOException, UserIsNotSellerException;
-    FollowersDto getFollowers(int userId) throws NotFoundException, IOException, UserIsNotSellerException;
-    FollowedDto getFollowedList (int userId) throws NotFoundException, IOException;
+    FollowersDto getFollowersList(int userId, String orderBy) throws NotFoundException, IOException, UserIsNotSellerException;
+    FollowedDto getFollowedList (int userId, String orderBy) throws NotFoundException, IOException;
     GlobalUserDto unfollowSeller(int userId, int sellerId) throws Exception;
     void addPostIdToSellerUser(PostDto postDto) throws NotFoundException, IOException, UserIsNotSellerException;
 

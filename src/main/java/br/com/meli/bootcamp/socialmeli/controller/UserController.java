@@ -33,19 +33,19 @@ public class UserController {
     }
 
     @GetMapping("/followers/count")
-    public ResponseEntity<FollowersCountDto> getTotalFollowers(@PathVariable int userId) throws NotFoundException, IOException, UserIsNotSellerException {
+    public ResponseEntity<FollowersCountDto> getTotalFollowers(@PathVariable int userId, @RequestParam String orderBy) throws NotFoundException, IOException, UserIsNotSellerException {
 
         return ResponseEntity.status(200).body(globalUserService.getTotalFollowers(userId));
     }
 
     @GetMapping("/followers/list")
-    public ResponseEntity<FollowersDto> getFollowers(@PathVariable int userId) throws NotFoundException, IOException, UserIsNotSellerException {
-        return ResponseEntity.status(200).body(globalUserService.getFollowers(userId));
+    public ResponseEntity<FollowersDto> getFollowersList(@PathVariable int userId, @RequestParam(required = false) String orderBy) throws NotFoundException, IOException, UserIsNotSellerException {
+        return ResponseEntity.status(200).body(globalUserService.getFollowersList(userId, orderBy));
     }
 
     @GetMapping("/followed/list")
-    public ResponseEntity<FollowedDto> getFollowedList(@PathVariable int userId) throws Exception {
-        return ResponseEntity.status(200).body(globalUserService.getFollowedList(userId));
+    public ResponseEntity<FollowedDto> getFollowedList(@PathVariable int userId, @RequestParam(required = false) String orderBy) throws Exception {
+        return ResponseEntity.status(200).body(globalUserService.getFollowedList(userId, orderBy));
     }
 
     @PostMapping("/unfollow/{userIdToUnfollow}")
