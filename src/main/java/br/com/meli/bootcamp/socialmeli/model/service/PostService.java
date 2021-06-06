@@ -10,5 +10,5 @@ import java.io.IOException;
 public interface PostService {
 
     PostDto createNewPost (PostDto postDto) throws IOException, NotFoundException, UserIsNotSellerException;
-    FollowedPostsDto getFollowedPosts(int userId) throws Exception;
+    FollowedPostsDto getFollowedPosts(int userId, String orderBy) throws Exception;
 }

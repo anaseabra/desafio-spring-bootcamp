@@ -25,8 +25,8 @@ public class ProductController {
     }
 
     @GetMapping("followed/{userId}/list")
-    public ResponseEntity<FollowedPostsDto> getFollowedPosts(@PathVariable int userId, @RequestParam String orderBy) throws Exception {
-        return ResponseEntity.status(200).body(postService.getFollowedPosts(userId));
+    public ResponseEntity<FollowedPostsDto> getFollowedPosts(@PathVariable int userId, @RequestParam(required = false) String orderBy) throws Exception {
+        return ResponseEntity.status(200).body(postService.getFollowedPosts(userId, orderBy));
     }
 
 }

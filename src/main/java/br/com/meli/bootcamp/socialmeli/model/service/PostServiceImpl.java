@@ -29,7 +29,7 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public FollowedPostsDto getFollowedPosts(int userId) throws Exception {
+    public FollowedPostsDto getFollowedPosts(int userId, String orderBy) throws Exception {
         FollowedPostsDto followedPostsDto = new FollowedPostsDto();
         GlobalUserDto user = globalUserService.getGlobalUserById(userId);
 
@@ -48,12 +48,8 @@ public class PostServiceImpl implements PostService{
             }
         }
 
-        posts.sort(Comparator.comparing(PostDto::getDate).reversed());
-
-        List<PostDto> sortedPostList = posts.subList(0, Math.min(posts.size(), 20));
-
         followedPostsDto.setUserId(userId);
-        followedPostsDto.setPosts(sortedPostList);
+        followedPostsDto.setPosts(orderBy(posts, orderBy));
 
         return followedPostsDto;
     }
@@ -68,5 +64,16 @@ public class PostServiceImpl implements PostService{
         }
 
         return true;
+    }
+
+    public List<PostDto> orderBy(List<PostDto> posts, String condition) {
+
+        if (condition == null || condition.equals("date_desc")) {
+            posts.sort(Comparator.comparing(PostDto::getDate).reversed());
+        } else if (condition.equals("date_asc")) {
+            posts.sort(Comparator.comparing(PostDto::getDate));
+        }
+
+        return posts;
     }
 }
