@@ -2,10 +2,7 @@ package br.com.meli.bootcamp.socialmeli.controller;
 
 import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
 import br.com.meli.bootcamp.socialmeli.exception.NotFoundException;
-import br.com.meli.bootcamp.socialmeli.model.dto.FollowedDto;
-import br.com.meli.bootcamp.socialmeli.model.dto.FollowersCountDto;
-import br.com.meli.bootcamp.socialmeli.model.dto.FollowersDto;
-import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
+import br.com.meli.bootcamp.socialmeli.model.dto.*;
 import br.com.meli.bootcamp.socialmeli.model.service.GlobalUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +31,6 @@ public class UserController {
 
     @GetMapping("/followers/count")
     public ResponseEntity<FollowersCountDto> getTotalFollowers(@PathVariable int userId, @RequestParam String orderBy) throws NotFoundException, IOException, UserIsNotSellerException {
-
         return ResponseEntity.status(200).body(globalUserService.getTotalFollowers(userId));
     }
 

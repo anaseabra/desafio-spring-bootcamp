@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7b73721e-79b6-40ec-b9fd-579c9cb613a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/globalUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/globalUsers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/posts.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/posts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/dto/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/PostRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/repository/PostRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/PostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/meli/bootcamp/socialmeli/model/service/PostServiceImpl.java" afterDir="false" />
     </list>
@@ -20,8 +26,8 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>

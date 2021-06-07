@@ -17,6 +17,8 @@ public class PostDto {
     private ProductDto detail;
     private ProductCategory category;
     private double price;
+    private boolean hasPromo;
+    private double discount;
 
     public int getPostId() {
         return postId;
@@ -64,6 +66,22 @@ public class PostDto {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public boolean isHasPromo() {
+        return hasPromo;
+    }
+
+    public void setHasPromo(boolean hasPromo) {
+        this.hasPromo = hasPromo;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
     }
 
     @Override

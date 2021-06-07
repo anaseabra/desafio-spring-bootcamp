@@ -10,5 +10,5 @@ public interface PostRepository {
 
     PostDto getPostById(int postId) throws NotFoundException, IOException;
     PostDto createNewPost(PostDto postDto) throws IOException;
-
+    List<PostDto> getPromoPosts(int userId) throws IOException;
 }

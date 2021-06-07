@@ -10,6 +10,7 @@ import org.springframework.util.ResourceUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,10 +26,10 @@ public class PostRepositoryImpl implements PostRepository{
 
     @Override
     public PostDto getPostById(int postId) throws NotFoundException, IOException {
-        List<PostDto> users = loadDataBase();
+        List<PostDto> posts = loadDataBase();
         PostDto result = null;
-        if (users != null) {
-            Optional<PostDto> item = users.stream()
+        if (posts != null) {
+            Optional<PostDto> item = posts.stream()
                     .filter(postDto -> postDto.getPostId() == postId)
                     .findFirst();
             if (!item.isPresent()) {
@@ -38,6 +39,23 @@ public class PostRepositoryImpl implements PostRepository{
         }
 
         return result;
+    }
+
+    @Override
+    public List<PostDto> getPromoPosts(int userId) throws IOException {
+        List<PostDto> promoPosts = new ArrayList<>();
+
+        List<PostDto> posts = loadDataBase();
+
+        if(posts != null){
+            for (PostDto post: posts){
+                if(post.getUserId() == userId && post.isHasPromo()){
+                    promoPosts.add(post);
+                }
+            }
+        }
+
+        return promoPosts;
     }
 
     @Override
