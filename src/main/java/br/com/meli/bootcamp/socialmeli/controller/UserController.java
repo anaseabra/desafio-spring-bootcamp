@@ -32,7 +32,7 @@ public class UserController {
         return ResponseEntity.status(200).body(this.globalUserService.getAllUsers());
     }
 
-    @PostMapping("/{userId}/delete")
+    @DeleteMapping("/{userId}/delete")
     public void deleteUser(@PathVariable int userId) throws NotFoundException, IOException {
         this.globalUserService.deleteUser(userId);
     }

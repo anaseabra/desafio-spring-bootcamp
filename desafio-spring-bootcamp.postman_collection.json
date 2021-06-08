@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "a681ea5a-ccf1-492e-a82e-036de890bfcb",
+		"name": "desafio-spring-bootcamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "US0001 - /users/{userId}/follow/{userIdToFollow}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1/follow/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"follow",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0002  -  /users/{userId}/followers/count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/8/followers/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"8",
+						"followers",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0003 - /users/{userId}/followers/list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"userId\": 1,\n        \"userName\": \"Hermione Granger\",\n        \"followed\": [\n            {\n                \"userId\": 9,\n                \"userName\": \"Auto Eletrica Paintball\",\n                \"seller\": true\n            }\n        ],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 2,\n        \"userName\": \"Harry Potter\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 3,\n        \"userName\": \"Draco Malfoy\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 4,\n        \"userName\": \"Ron Wesley\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 5,\n        \"userName\": \"Severus Snape\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 6,\n        \"userName\": \"Albus Dumbledore\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 7,\n        \"userName\": \"Rubeo Hagrid\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 8,\n        \"userName\": \"Auto Peças Pebolim\",\n        \"followed\": [\n            {\n                \"userId\": 9,\n                \"userName\": \"Auto Eletrica Paintball\",\n                \"seller\": true\n            }\n        ],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 9,\n        \"userName\": \"Auto Eletrica Paintball\",\n        \"followed\": [\n            {\n                \"userId\": 11,\n                \"userName\": \"Witcher Manutenção de Computadores\",\n                \"seller\": true\n            }\n        ],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": [\n            {\n                \"userId\": 8,\n                \"userName\": \"Auto Peças Pebolim\",\n                \"seller\": true\n            },\n            {\n                \"userId\": 1,\n                \"userName\": \"Hermione Granger\",\n                \"seller\": false\n            }\n        ]\n    },\n    {\n        \"userId\": 10,\n        \"userName\": \"Warcraft Informatica\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 11,\n        \"userName\": \"Witcher Manutenção de Computadores\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": [\n            {\n                \"userId\": 9,\n                \"userName\": \"Auto Eletrica Paintball\",\n                \"seller\": true\n            }\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/8/followers/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"8",
+						"followers",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0004  - /users/{userId}/followed/list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/followed/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"followed",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0005 - /products/newpost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 5,\n  \"date\": \"05-06-2021\",\n  \"detail\": {\n    \"productId\": 1,\n    \"productName\": \"Azevinho e Pena de Fênix0\",\n    \"type\": \"Uso pessoal\",\n    \"brand\": \"Ollivander\",\n    \"color\": \"Brown\",\n    \"notes\": \"Special Edition\"\n  },\n  \"category\": 0,\n  \"price\": 1464.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/newpost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"newpost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0006 - /products/followed/1/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/1/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"1",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0007  - /users/{userId}/unfollow/{userIdToUnfollow}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/2/unfollow/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"2",
+						"unfollow",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0008 - /users/{userId}/followers/list?orderBy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"userId\": 1,\n        \"userName\": \"Hermione Granger\",\n        \"followed\": [\n            {\n                \"userId\": 9,\n                \"userName\": \"Auto Eletrica Paintball\",\n                \"seller\": true\n            }\n        ],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 2,\n        \"userName\": \"Harry Potter\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 3,\n        \"userName\": \"Draco Malfoy\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 4,\n        \"userName\": \"Ron Wesley\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 5,\n        \"userName\": \"Severus Snape\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 6,\n        \"userName\": \"Albus Dumbledore\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 7,\n        \"userName\": \"Rubeo Hagrid\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": false,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 8,\n        \"userName\": \"Auto Peças Pebolim\",\n        \"followed\": [\n            {\n                \"userId\": 9,\n                \"userName\": \"Auto Eletrica Paintball\",\n                \"seller\": true\n            }\n        ],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 9,\n        \"userName\": \"Auto Eletrica Paintball\",\n        \"followed\": [\n            {\n                \"userId\": 11,\n                \"userName\": \"Witcher Manutenção de Computadores\",\n                \"seller\": true\n            }\n        ],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": [\n            {\n                \"userId\": 8,\n                \"userName\": \"Auto Peças Pebolim\",\n                \"seller\": true\n            },\n            {\n                \"userId\": 1,\n                \"userName\": \"Hermione Granger\",\n                \"seller\": false\n            }\n        ]\n    },\n    {\n        \"userId\": 10,\n        \"userName\": \"Warcraft Informatica\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": []\n    },\n    {\n        \"userId\": 11,\n        \"userName\": \"Witcher Manutenção de Computadores\",\n        \"followed\": [],\n        \"followedPosts\": [],\n        \"seller\": true,\n        \"myPosts\": [],\n        \"followers\": [\n            {\n                \"userId\": 9,\n                \"userName\": \"Auto Eletrica Paintball\",\n                \"seller\": true\n            }\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/11/followers/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"11",
+						"followers",
+						"list"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "name_asc",
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": "name_desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0008 - /users/{userId}/followed/list?orderBy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/followed/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"followed",
+						"list"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "name_asc",
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": "name_desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0009 - /products/followed/1/list?orderBy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/1/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"1",
+						"list"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "date_asc",
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": "date_desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0010 - /products/newpromopost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 9,\n  \"postId\": 30,\n  \"date\": \"07-06-2021\",\n  \"detail\": {\n    \"productId\": 2,\n    \"productName\": \"Cadeira Gamer \",\n    \"type\": \"Gamer\",\n    \"brand\": \"Racer\",\n    \"color\": \"Red & Black\",\n    \"notes\": \"Special Edition\"\n  },\n  \"category\": 1,\n  \"price\": 1505.5,\n  \"hasPromo\": true, \n  \"discount\": 0.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/newpromopost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"newpromopost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0011 - /products/{userId}/countPromo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 11,\n  \"postId\": 26,\n  \"date\": \"30-05-2021\",\n  \"detail\": {\n    \"productId\": 2,\n    \"productName\": \"Cadeira Gamer \",\n    \"type\": \"Gamer\",\n    \"brand\": \"Racer\",\n    \"color\": \"Red & Black\",\n    \"notes\": \"Special Edition\"\n  },\n  \"category\": 1,\n  \"price\": 1500.5,\n  \"hasPromo\": false, \n  \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/11/countpromo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"11",
+						"countpromo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0012 - /products/{userId}/list/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 11,\n  \"postId\": 26,\n  \"date\": \"30-05-2021\",\n  \"detail\": {\n    \"productId\": 2,\n    \"productName\": \"Cadeira Gamer \",\n    \"type\": \"Gamer\",\n    \"brand\": \"Racer\",\n    \"color\": \"Red & Black\",\n    \"notes\": \"Special Edition\"\n  },\n  \"category\": 1,\n  \"price\": 1500.5,\n  \"hasPromo\": false, \n  \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/1/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0013 - /users/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"Augusto Brum\",\n    \"seller\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0014 - /users/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0015 - /users/{userId}/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US0016 - /users/{userId}/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/14/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"14",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
