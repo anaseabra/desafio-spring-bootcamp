@@ -4,12 +4,14 @@ import br.com.meli.bootcamp.socialmeli.exception.NotFoundException;
 import br.com.meli.bootcamp.socialmeli.exception.PromoPostException;
 import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
 import br.com.meli.bootcamp.socialmeli.model.dto.*;
-import br.com.meli.bootcamp.socialmeli.model.repository.GlobalUserRepository;
 import br.com.meli.bootcamp.socialmeli.model.repository.PostRepository;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class PostServiceImpl implements PostService{
@@ -43,7 +45,7 @@ public class PostServiceImpl implements PostService{
 
         for(UserDetail seller: followers.getFollowers()){
             GlobalUserDto sellerFollowed = globalUserService.getSellerUserById(seller.getUserId());
-            for(Integer i: sellerFollowed.getMyPosts()){
+            for(int i: sellerFollowed.getMyPosts()){
                 PostDto post = postRepository.getPostById(i);
                 if(compareDates(post.getDate())){
                     posts.add(post);

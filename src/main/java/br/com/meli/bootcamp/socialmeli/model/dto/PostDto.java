@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 import java.util.Objects;
 
+
 public class PostDto {
 
     private int postId;
@@ -20,12 +21,12 @@ public class PostDto {
     private boolean hasPromo;
     private double discount;
 
-    public int getPostId() {
-        return postId;
-    }
-
     public void setPostId(int postId) {
         this.postId = postId;
+    }
+
+    public int getPostId() {
+        return postId;
     }
 
     public int getUserId() {

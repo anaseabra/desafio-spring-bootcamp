@@ -2,16 +2,15 @@ package br.com.meli.bootcamp.socialmeli.model.repository;
 
 import br.com.meli.bootcamp.socialmeli.Utils.SocialMeliUtils;
 import br.com.meli.bootcamp.socialmeli.exception.AlreadyFollowException;
-import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
 import br.com.meli.bootcamp.socialmeli.exception.NotFoundException;
 import br.com.meli.bootcamp.socialmeli.model.dto.GlobalUserDto;
+import br.com.meli.bootcamp.socialmeli.model.dto.NewUser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -21,17 +20,46 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
 
     private ObjectMapper mapper = new ObjectMapper();
     private final File file = ResourceUtils.getFile("files/globalUsers.json");
+    private final List<GlobalUserDto> userDtoList = loadDataBase();
 
-    public GlobalUserRepositoryImpl() throws FileNotFoundException {
+
+    public GlobalUserRepositoryImpl() throws IOException {
+    }
+
+    @Override
+    public GlobalUserDto createNewUser(NewUser user) throws IOException {
+        int indexOfLastUser = userDtoList.size()-1;
+        GlobalUserDto newUser = new GlobalUserDto(user.getUserName(), user.isSeller());
+        if(userDtoList.isEmpty()){
+            newUser.setUserId(1);
+        } else {
+            newUser.setUserId(userDtoList.get(indexOfLastUser).getUserId()+1);
+        }
+        userDtoList.add(newUser);
+        mapper.writeValue(file, userDtoList);
+
+        return newUser;
+    }
+
+    @Override
+    public List<GlobalUserDto> findAllUsers() throws IOException {
+        return userDtoList;
     }
 
 
     @Override
+    public void deleteUser(int userId) throws NotFoundException, IOException {
+        GlobalUserDto user = findGlobalUserById(userId);
+        userDtoList.remove(user);
+
+        mapper.writeValue(file, userDtoList);
+    }
+
+    @Override
     public GlobalUserDto findGlobalUserById(int userId) throws NotFoundException, IOException {
-        List<GlobalUserDto> users = loadDataBase();
         GlobalUserDto result = null;
-        if (users != null) {
-            Optional<GlobalUserDto> item = users.stream()
+        if (userDtoList != null) {
+            Optional<GlobalUserDto> item = userDtoList.stream()
                     .filter(userDto -> userDto.getUserId() == userId)
                     .findFirst();
             if (!item.isPresent()) {
@@ -44,9 +72,7 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
     }
 
     @Override
-    public GlobalUserDto followSellerUser(int userId, GlobalUserDto sellerUser) throws Exception {
-        List<GlobalUserDto> userDtoList = loadDataBase();
-
+    public GlobalUserDto followSellerUser(int userId, GlobalUserDto sellerUser) throws IOException, NotFoundException, AlreadyFollowException {
         GlobalUserDto user = this.findGlobalUserById(userId);
 
         int indexGlobalUser = userDtoList.indexOf(user);
@@ -66,7 +92,7 @@ public class GlobalUserRepositoryImpl implements GlobalUserRepository {
     }
 
     @Override
-    public GlobalUserDto unfollowSellerUser(int userId, GlobalUserDto sellerUser) throws Exception {
+    public GlobalUserDto unfollowSellerUser(int userId, GlobalUserDto sellerUser) throws IOException, NotFoundException, AlreadyFollowException {
         List<GlobalUserDto> userDtoList = loadDataBase();
 
         GlobalUserDto user = this.findGlobalUserById(userId);

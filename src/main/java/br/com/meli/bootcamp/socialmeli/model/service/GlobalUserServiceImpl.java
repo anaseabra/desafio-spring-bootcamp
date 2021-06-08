@@ -1,17 +1,16 @@
 package br.com.meli.bootcamp.socialmeli.model.service;
 
 
-import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
+import br.com.meli.bootcamp.socialmeli.exception.AlreadyFollowException;
 import br.com.meli.bootcamp.socialmeli.exception.NotFoundException;
+import br.com.meli.bootcamp.socialmeli.exception.UserIsNotSellerException;
 import br.com.meli.bootcamp.socialmeli.model.dto.*;
 import br.com.meli.bootcamp.socialmeli.model.repository.GlobalUserRepository;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.locks.Condition;
 
 @Service
 public class GlobalUserServiceImpl implements GlobalUserService {
@@ -23,7 +22,22 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     }
 
     @Override
-    public GlobalUserDto getGlobalUserById(int userId) throws Exception {
+    public GlobalUserDto createNewUser(NewUser user) throws IOException {
+        return globalUserRepository.createNewUser(user);
+    }
+
+    @Override
+    public void deleteUser(int userId) throws NotFoundException, IOException {
+        globalUserRepository.deleteUser(userId);
+    }
+
+    @Override
+    public List<GlobalUserDto> getAllUsers() throws IOException {
+        return globalUserRepository.findAllUsers();
+    }
+
+    @Override
+    public GlobalUserDto getGlobalUserById(int userId) throws NotFoundException, IOException {
         return globalUserRepository.findGlobalUserById(userId);
     }
 
@@ -39,7 +53,7 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     }
 
     @Override
-    public GlobalUserDto followSeller(int userId, int sellerId) throws Exception {
+    public GlobalUserDto followSeller(int userId, int sellerId) throws NotFoundException, IOException, UserIsNotSellerException, AlreadyFollowException {
         GlobalUserDto sellerUser = getSellerUserById(sellerId);
 
         if (!sellerUser.isSeller()) {
@@ -88,7 +102,7 @@ public class GlobalUserServiceImpl implements GlobalUserService {
     }
 
     @Override
-    public GlobalUserDto unfollowSeller(int userId, int sellerId) throws Exception {
+    public GlobalUserDto unfollowSeller(int userId, int sellerId) throws UserIsNotSellerException, NotFoundException, IOException, AlreadyFollowException {
         GlobalUserDto sellerUser = getSellerUserById(sellerId);
 
         if (!sellerUser.isSeller()) {

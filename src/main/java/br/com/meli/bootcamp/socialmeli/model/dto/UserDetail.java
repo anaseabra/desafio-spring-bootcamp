@@ -2,12 +2,11 @@ package br.com.meli.bootcamp.socialmeli.model.dto;
 
 import java.util.Objects;
 
+
 public class UserDetail {
 
     private int userId;
     private String userName;
-//    private boolean seller;
-
 
     @Override
     public boolean equals(Object o) {
@@ -37,13 +36,5 @@ public class UserDetail {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-//    public boolean isSeller() {
-//        return seller;
-//    }
-//
-//    public void setSeller(boolean seller) {
-//        this.seller = seller;
-//    }
 
 }

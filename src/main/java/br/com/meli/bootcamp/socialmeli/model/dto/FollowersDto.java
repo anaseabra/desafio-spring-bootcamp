@@ -2,6 +2,7 @@ package br.com.meli.bootcamp.socialmeli.model.dto;
 
 import java.util.List;
 
+
 public class FollowersDto {
 
     private int userId;

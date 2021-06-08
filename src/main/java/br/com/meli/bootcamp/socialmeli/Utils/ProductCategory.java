@@ -2,11 +2,11 @@ package br.com.meli.bootcamp.socialmeli.Utils;
 
 public enum ProductCategory {
 
-    CADEIRAS(0),
-    MESAS(1),
-    MONITORES(2),
-    TECLADOS(3),
-    MOUSES(4),
+    VARINHAS(0),
+    CORUJAS(1),
+    CALDEIRÕES(2),
+    CAPAS(3),
+    DOCES(4),
     VASSOURAS(5);
 
     private int value;

@@ -1,15 +1,29 @@
 package br.com.meli.bootcamp.socialmeli.model.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
 public class GlobalUserDto {
+
     private int userId;
     private String userName;
     private List<UserDetail> followed;
     private boolean seller;
     private List<Integer> myPosts;
     private List<UserDetail> followers;
+
+    public GlobalUserDto() {
+    }
+
+    public GlobalUserDto(String userName, boolean isSeller) {
+        this.userName = userName;
+        this.seller = isSeller;
+        this.followed = new ArrayList<>();
+        this.myPosts = new ArrayList<>();
+        this.followers = new ArrayList<>();
+    }
 
     @Override
     public boolean equals(Object o) {

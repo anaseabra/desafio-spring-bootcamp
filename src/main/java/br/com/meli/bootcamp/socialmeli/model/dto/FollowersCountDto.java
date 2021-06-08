@@ -1,5 +1,7 @@
 package br.com.meli.bootcamp.socialmeli.model.dto;
 
+
+
 public class FollowersCountDto {
 
     private int userId;

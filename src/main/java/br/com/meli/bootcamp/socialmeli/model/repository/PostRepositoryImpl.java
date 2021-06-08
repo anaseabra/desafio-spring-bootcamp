@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 @Repository
 public class PostRepositoryImpl implements PostRepository{
 
     private final File postFile = ResourceUtils.getFile("files/posts.json");
-    private final File globalUserFile = ResourceUtils.getFile("files/globalUsers.json");
     private ObjectMapper mapper = new ObjectMapper();
 
     public PostRepositoryImpl() throws FileNotFoundException {
@@ -60,10 +60,17 @@ public class PostRepositoryImpl implements PostRepository{
 
     @Override
     public PostDto createNewPost(PostDto postDto) throws IOException {
-        List<PostDto> users = loadDataBase();
+        List<PostDto> posts = loadDataBase();
+        int indexOfLastPost = posts.size()-1;
 
-        users.add(postDto);
-        mapper.writeValue(postFile, users);
+        if(posts.isEmpty()){
+            postDto.setPostId(1);
+        } else {
+            postDto.setPostId(posts.get(indexOfLastPost).getPostId()+1);
+        }
+
+        posts.add(postDto);
+        mapper.writeValue(postFile, posts);
 
         return postDto;
     }
