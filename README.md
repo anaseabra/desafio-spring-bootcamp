@@ -6,6 +6,8 @@
 ##Desafio foi realizado utilizando dois arquivos como banco de dados, ambos estão na pasta principal do projeto: 
     -->globalUsers.json
     -->posts.json
+    
+##Arquivo json com a collection do postman está na pasta principal do projeto
 
 ##Alguns users já foram criados. Eles se diferenciam em usuarios comuns ou vendedores pela flag "seller", sendo eles:
     -->ids dos usuários comuns: 2,3,6,7,8,9,10
@@ -24,4 +26,3 @@
 
 
 ##Uma documentação técnica mais detalhada de cada endpoint desta aplicação está dispoível em: https://drive.google.com/file/d/1-Gf6t2G-_WnEpspYXSASkYjlOJZD2LNH/view?usp=sharing
-
